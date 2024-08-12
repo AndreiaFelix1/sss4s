@@ -41,8 +41,8 @@ def main():
     freeway_parser.add_argument("-b", "--bidirectional", default=False, action='store_true',
                                 help="Generates both directions (default: false)")
     freeway_parser.add_argument("-l", "--lanes", default=4, type=int, help="Number of lanes per direction (default: 4)")
-    freeway_parser.add_argument("-len", "--length", default=250, type=float,
-                                help="Length for each lane (in meters, default:250)")
+    freeway_parser.add_argument("-len", "--length", default=20000, type=float,
+                                help="Length for each lane (in meters, default: 20000)")
     freeway_parser.add_argument("-s", "--speed", default=27.778, type=float,
                                 help="The maximum speed for vehicles (default: 27.778 m/s)")
     freeway_parser.add_argument("-t", "--traffic", default=False, action='store_true',
@@ -55,7 +55,8 @@ def main():
     intersection_parser.add_argument("-s", "--speed", default=13.89, type=float)
     intersection_parser.add_argument("-l", "--lanes", default=1, type=int)
     intersection_parser.add_argument("-tl-all", "--traffic_light_all", action='store_true')
-    intersection_parser.add_argument("-tl", "--traffic_light", default=[], nargs='+')
+    intersection_parser.add_argument("-tl", "--traffic_light", default=[10000], nargs='+',
+                                     help="Position(s) of the traffic light(s) (in meters)")
     intersection_parser.add_argument("-tl-notall", "--traffic_light_notall", default=[], nargs='+')
     intersection_parser.add_argument("-p", "--polygon", action='store_true')
     intersection_parser.add_argument("-pm", "--polygon_margin", default=5, type=int)
@@ -142,5 +143,4 @@ def main():
 if __name__ == "__main__":
     print(__label__ + " Version " + str(__version__) + "\n" +
           "Copyright (C) 2021 \n" +
-          "License GPL-2.0-or-later: https://spdx.org/licenses/GPL-2.0-or-later.html\n")
-    main()
+          "License GPL-2.0-or-later: https://spdx.org/licenses/GPL-2.0
