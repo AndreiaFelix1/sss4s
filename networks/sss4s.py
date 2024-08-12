@@ -142,5 +142,6 @@ def main():
 
 if __name__ == "__main__":
     print(__label__ + " Version " + str(__version__) + "\n" +
-          "Copyright (C) 2021 \n" +
-          "License GPL-2.0-or-later: https://spdx.org/licenses/GPL-2.0
+    "Copyright (C) 2021 \n" +
+    "License GPL-2.0-or-later: https://spdx.org/licenses/GPL-2.0-or-later.html\n"
+)
